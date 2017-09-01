@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2010-first/details/389/" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Robot Warehouse<br>by oberhamsi</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+
+var b=document.body.children[0],Z=50;
+
+with(b)
+var c=width=innerWidth,f=height=innerHeight,k=getContext("2d"),l=c/2,m=f/2,n=Math,p=n.max,q=n.random,r=parseInt,s=n.sin,t=n.cos,u=0,w=s(.8),x=t(.8),y=0,z=rz=.01,B=200,C=500;
+
+function D(a,d,g){var e=s(y),i=t(y),j=x*g-w*(i*d-e*a);return[l-(e*d+i*a)*B/j,m+(w*g+x*(i*d-e*a))*B/j,j]}
+function E(a){var d=a[0],g=a[1],e=a[2],i=d+a[3],j=g+a[4],o=D(d,g,e),v=true;with(k){fillStyle=strokeStyle=a[5];[o,D(i,g,e),D(i,j,e),D(d,j,e),o].every(function(h,A){if(h[0]<0||h[0]>c||h[1]>f)v=false;A===0?beginPath(p(h[0],0),p(h[1],0)):lineTo(p(h[0],0),p(h[1],0));return v||A!=0});fill();if(a[2]>-C){moveTo(o[0],o[1]);a=D(d,g,-C);lineTo(a[0],a[1]);stroke()}}return v}var F=[];setInterval(function(){k.fillStyle="#000";k.fillRect(0,0,c,f);for(F=F.filter(function(a){a[1]-=a[6];a[2]+=a[7];if(a[2]<=-C)a[7]=0;return E(a)});F.length<B;)F.push([-16*C+q()*32*C,4*C-q()*Z,-B+q()*-C,Z+q()*B,Z+q()*B,"rgb("+r(q()*B)+","+r(q()*B)+","+r(q()*B)+")",Z+q()*Z,-10+q()*-Z]);y+=z;z=y>.3?-rz:y<-.3?rz:z;u+=20},Z);
+    
+</script></body></html>

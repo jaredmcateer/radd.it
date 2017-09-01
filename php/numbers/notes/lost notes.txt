@@ -1,0 +1,10 @@
+
+Oceanic flight 815, leaving 11:15 from gate 23.  On September 22, 2004 at 4:16 P.M., the airliner, carrying 324 passengers, deviated from its original course and disappeared over the Pacific Ocean. 
+
+The numbers: 4, 8, 15, 16, 23, 42 
+Hurley: 15 16 23 424 9 (repeats)
+
+15 		5+5+5
+16 		4+4+4+4
+424		106+106+106+106
+9		3+3+3

@@ -1,0 +1,28 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2010-first/details/760" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Shiny Discs<br>by Daniel Muller</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+m=Math;C=m.cos;S=m.sin;P=m.round;n=101;rx=rX=ry=rz=F=0;_=document.body;xc=yc=zc=0;U=1.7;_.style.overflow="hidden";c=_.children[0];c.width=w=innerWidth-16;c.height=h=innerHeight-16;d=c.getContext("2d");t=w/h;
+function R(s){return m.round(m.random()*s)}function r(s){return(m.random()*2-1)*s};
+with(d){scale(w*0.5,h*0.5*t);translate(1,1/t)};
+function B(){
+rX+=0.01;
+rx=S(rX);
+ry+=0.01;rz+=0.0;
+d.clearRect(-t,-1,2*t,2);
+Ry=S(ry);RY=C(ry);Rx=S(rx);RX=C(rx);Rz=S(rz);RZ=C(rz);
+D();F++;}
+function D(){for(i=0;i<n*8;i+=8){with(d){p=(a[i+4]+1)*96;
+x=a[i]-xc;y=a[i+1]-yc;z=a[i+2]-zc;Y=y*RX+z*Rx;Z=z*RX-y*Rx;X=x*RY+Z*Ry;z=Z*RY-x*Ry;x=X*RZ+Y*Rz;y=Y*RZ-X*Rz;
+if(z<U-0.1){iz=1/(U+z);fillStyle='rgba('+P(p*4)+','+P(p)+',48,'+m.max(0,1-iz/5-z/2)+')';beginPath();arc(x*iz,y*iz,m.abs((2+a[i+3])*iz)/24,0,7,0);closePath();fill()}}}}setInterval("B()",50);a=Array();for(i=0;i<(n+1)*8;i++){a[i]=r(1)}
+    
+
+</script></body></html>

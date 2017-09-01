@@ -1,0 +1,26 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://shiing.com/" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Circlemeetssquare<br>by Ryan</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+var b=document.getElementById("c"),c=b.getContext("2d"),d,e,f,g=[],h=[],i=[],j=[],k=[],m;f=e=650;
+
+b.style.position="fixed";
+b.style.height=window.innerHeight+"px";
+b.style.width=window.innerWidth+"px";
+// b.style.left="50%";
+// b.style.marginLeft=-e/2+"px";
+
+e=Math.floor(e*0.3);f=Math.floor(f*0.3);b.width=e;b.height=f;d=c.getImageData(0,0,e,f);m=function(){for(var a=0;a<3;a++)k[a]=Math.floor(Math.random()*255)};m();setInterval(m,5E2);for(var n=0;n<5E4;n++){if(n<3)j[n]=k[n];g.push(e/2);h.push(f/2);i.push(Math.random()*360)}
+setInterval(function(){for(var a=0;a<5E4;a++){g[a]+=0.5*Math.sin(i[a]*0.01745);h[a]+=0.5*Math.cos(i[a]*0.01745);if(g[a]<0){g[a]=0;i[a]*=-1}if(g[a]>e-1){g[a]=e-1;i[a]*=-1}if(h[a]<0){h[a]=0;i[a]+=180;i[a]*=-1}if(h[a]>f-1){h[a]=f-1;i[a]+=180;i[a]*=-1}if(i[a]<-360)i[a]+=360;if(i[a]>360)i[a]-=360}for(a=3;a<d.data.length;a+=4)d.data[a]-=2;for(a=0;a<3;a++)if(j[a]<k[a])j[a]++;else j[a]>k[a]&&j[a]--;for(a=0;a<5E4;a++){for(var o=(Math.ceil(g[a])+Math.ceil(h[a])*e)*4,l=0;l<3;l++)d.data[o+l]=j[l];d.data[o+3]=
+255}c.putImageData(d,0,0)},5);
+    
+
+</script></body></html>

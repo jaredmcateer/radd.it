@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/details/1362" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Flower of Life<br>by Tristan Brehaut</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+window.onload=function(){document.body.style.backgroundColor="#222222";var b=[],e=c.width=window.innerWidth-4,g=c.height=window.innerHeight-4;a.translate(e/2,g/2);b.push({x:0,y:0,a:0,b:0,e:0,d:0,c:0});for(var f=1,h=255,j=255,k=255;21>f;f++)h-=8,j+=4,k-=12,b.push({x:b[f-1].x+(Math.random()*(e/8)-e/16),y:-(g/21)*f,a:(2*Math.random()-1)/1,b:(2*Math.random()-1)/1,e:h,d:j,c:k});window.setInterval(function(){for(var d=1;d<b.length;d++){b[d].y+=b[d].b;if(b[d].y>g||b[d].y<-g)b[d].b*=-1;b[d].x+=b[d].a;if(b[d].x> e||b[d].x<-e)b[d].a*=-1}a.save();a.fillStyle="rgba(0,0,0,0.02)";a.fillRect(-e/2,-g/2,e,g);a.restore();a.save();a.globalCompositeOperation="lighter";for(d=b.length-1;1<d;d--)for(var f=0;5>f;f++)a.beginPath(),a.moveTo(b[d-1].x,b[d-1].y),a.bezierCurveTo(b[d-1].x,b[d-1].y,0,0,b[d].x,b[d].y),a.strokeStyle="rgba("+b[d].e+","+b[d].d+","+b[d].c+",0.075)",a.stroke(),a.rotate(1.256637);a.restore();a.rotate(0.005)},25)};
+    
+</script></body></html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/details/1378" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Serious Stuff<br>by Pawel Waleczek</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+b.style.margin="0";w=window;P=w.innerWidth;H=w.innerHeight;c.width=P;c.height=H;M=Math;s=M.sin;f=M.cos;y=M.ceil;r=M.random;W=v=[];D=M.PI/180;G="globalCompositeOperation";C=V=N=B=0;a.a=a.fillRect;d=20;Z=Q=0;function e(){for(u=6;u--;)v[u]=y(3*r())}e();
+
+b.onmousemove=function(g){W.push([y(g.pageX/d-1)*d,y(g.pageY/d-1)*d,0])};
+
+// b.onclick=function(){Z=1};
+setInterval(function(){ Z=Math.random(); }, 6000);
+
+setInterval(function(){a.save();for(i=y(P/d);i--;){C+=5E-4*f(D*i*v[1]);N+=0.001*s(D*(d-i)*v[3]);for(j=y(H/d);j--;)V+=0.001*f(D*i*v[4]),B+=0.001*s(D*(d-i)*v[2]),h=(4*v[2]+1)*i*f(D)+100*v[3]*f(D*(C+V)*v[1]+v[4]),t=(4*v[2]+1)*j*f(3<v[1]?f(1/h):f(1/D))+100*v[4]*s(D*(N+B)*v[5]/720),k=50*((v[3]+1)*(i+j)*v[3]*v[1])*s(D*((d-i)*h+(j-d)*h)*v[4]/720),h=(13*v[4]+3)*f(D*h)+30/v[3]*f(D*j),K=y(40*v[4]*v[1])+y(9*v[1]*f(D*t)+h),L=y(40*v[2])+y(9*v[3]*f(D*k)+h),a.fillStyle="rgb("+K+","+L+","+y((K+L)/2-h*v[4])+")",a.a(i*d+Z/2,j*d+Z/2,d-Z,d-Z),0<=Z&&Z<d&&(0==Q&&(Z+=0.001,Z>=d&&(Q=1,e())),1==Q&&(Z-=0.001,0>=Z&&(Q=0)))}a[G]="lighter";for(U=W.length;U--;){O=W[U];for(R=-O[2]*d;R<O[2]*d;R++)S=M.sqrt(O[2]*O[2]-R*R)*d,a.fillStyle="rgba(99,99,99,"+(O[2]-6)/-10+")",a.a(O[0]+R*d,O[1]+S,d,d),a.a(O[0]-R*d,O[1]-S,d,d);O[2]+=0.33;6<=O[2]&&W.splice(U,1)}a.restore()},50);
+
+</script></body></html>

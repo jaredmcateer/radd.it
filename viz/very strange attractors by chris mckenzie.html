@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/details/1534" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Strange Attractors<br>by Chris McKenzie</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+var S=window.innerWidth,b=a.getImageData(0,0,window.innerWidth,window.innerHeight),d,e,g,h,j,k,l=0,m=0,n,p,q,r,s,t;
+
+c.setAttribute("width",window.innerWidth);c.setAttribute("height",window.innerHeight);
+
+setInterval(function(){l+=.001;m+=.002;var u=3*Math.sin(l);n=4*(Math.sin(3+m)+1);r=S/(2*n);t=n*r;for(h=0;h<b.data.length;h+=4)b.data[h]*=.9,b.data[h+1]*=.9,b.data[h+2]*=.9,b.data[h+3]=255;for(var v=100;v--;){h=k=v;j=0;for(g=1e3;g--;)j!=k&&(h=(h-k)/(h+u*j+k),j=(h-k)/(j-k),k=(h-k)/(u*h-j+k),p=h*Math.cos(m)-j*Math.sin(m),q=h*Math.sin(k)+j*Math.cos(m),p<n&&(p>-n&&q<n&&q>-n)&&(d=Math.floor(t-p*r),e=Math.floor(t-q*r),s=4*(S*d+e),b.data[s]+=32,b.data[s+1]+=15,b.data[s+2]+=Math.abs(9*k)))}a.putImageData(b,0,0)},2);
+    
+</script></body></html>

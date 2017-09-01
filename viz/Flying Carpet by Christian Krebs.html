@@ -1,0 +1,21 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://www.aleto.ch/" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Flying Carpet<br>by Christian Krebs</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+(H=document).onkeydown=function(){T=!T};
+H=H.getElementById('c');
+E=H.width=window.innerWidth;
+H.height=window.innerHeight;
+R=H.getContext('2d');R.fillRect(0,0,E,E);R.l=R.lineTo;A=255;C=A/2;L=0;I=8;T=Math;U=T.sin;S=T.sqrt(3)/2;setInterval(function(){if(T){a=(1+U(3*U(23*L)))*C;b=(1+U(5*U(19*L)))*C;c=(1+U(7*U(17*L)))*C;d=(1+U(11*U(13*L)))*C;e=.2+.4*(1+U(3*U(17*L)));f=300+U(5*U(19*L))*C;g=300+U(7*U(23*L))*C;L+=.0003;R.drawImage(H,f/30,g/50,585,590,0,0,E,E);for(h=0;h<A;h+=5){for(i=0;i<A;i+=5){j=a+h*(b-a)/A;k=(c+h*(d-c)/A-j)/A;l=(b+i*(d-b)/A-a-i*(c-a)/A)/A;j+=i*k;R.fillStyle="rgb("+h+","+(j>>0)+","+i+")";R.beginPath();m=f-e*(220-h*S-i*S);j=g+e*(127+h*.5-i*.5-j);R.moveTo(m,j);R.l(m+e*I*S,j-e*(I*0.5+k*I));R.l(m+e*I*2*S,j-e*(k*I+l*I));R.l(m+e*I*S,j+e*(I*.5-l*I));R.closePath();R.fill();}}}},75)
+    
+    
+
+</script></body></html>

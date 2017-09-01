@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+A=Math;R=A.random;z=[];e=200;m=e-1;f=0;r=[];u=this;Y=c.width=u.innerWidth;g=c.height=u.innerHeight;b.style.margin=0;K=function(p,q,v,w,E,G,H,I){var d=v-p,n=w-q,h=(d>>1)+p,k=(n>>1)+q,B=z[h+q*e],C=z[p+k*e],D;2!=d+n&&(z[h+q*e]=null==B?B=(E+G>>1)-d+~~(2*R()*d+0.7):B,z[p+k*e]=null==C?C=(E+H>>1)-n+~~(2*R()*n+0.7):C,z[v+k*e]=n=v==m?z[k*e]:(G+I>>1)-n+~~(2*R()*n+0.7),z[h+w*e]=D=w==m?z[h]:(H+I>>1)-d+~~(2*R()*d+0.7),z[h+k*e]=d=~~(B+D+C+n>>2)-d+~~(2*R()*d+0.7),1<h-p+k-q?K(p,q,h,k,E,B,C,d):1,1<v-h+k-q?K(h,q,v,k,B,G,d,n):1,1<h-p+w-k?K(p,k,h,w,C,d,H,D):1,1<v-h+w-k?K(h,k,v,w,d,n,D,I):1)};F=function(){i=0;for(y=j=e/2;y-- >-j;)for(x=-j;x++<j;)r[i++]=0<y&&x*x+y*y<8*e?{x:500*x/y+Y>>1,y:50*(z[f%m*e]+40-(h1=z[m+x%m+(f+y)%m*e]))/y+g>>1,c:h1-6*y}:null;a.fillStyle=Z=a.createRadialGradient(e,50,9,e,50,Y/3);s=["#652","#060200"];for(j in s)Z.addColorStop(j,s[j]);a.fillRect(0,0,Y,g);f++;for(i=0;i++<m*m;)if(t=i,s=[r[t],r[++t],r[t+e],r[i+e]],s[0]&&s[1]&&s[2]&&s[3]){t=s[0].c;j=",";a.fillStyle="rgb("+t+j+(t-60)+j+(t>>4)+")";a.beginPath();for(j in s)a.lineTo(s[j].x,s[j].y);a.fill()}setTimeout("F()",20)};K(0,0,m,m,l=z[0]=z[m]=z[m*e]=z[m*m-1]=99,l,l,l);F();
+        
+
+</script></body></html>

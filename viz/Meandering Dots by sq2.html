@@ -1,0 +1,18 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://funkyvector.com/" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Meandering Dots<br>by sq2</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+
+var a=innerWidth-20,b=innerHeight-20,c=a>b?a/15:b/15,d=document.getElementById("c");d.style.height=d.height=b;d.style.width=d.width=a;d=d.getContext("2d");var e,f,g=[],h,i;for(e=0;e<200;e++){h={};h.x=Math.random()*a;h.y=Math.random()*b;h.a=Math.random()*1E3;h.b=h.a;g[e]=h}var j,k,l;
+setInterval(function(){d.fillStyle="rgba(0, 0, 0, 0.4)";d.fillRect(0,0,a,b);for(e=0;e<200;e++){h=g[e];var m;h.a+=Math.random()>0.5?-1:1;h.b-=(h.b-h.a)*0.01;m=h.b*25;h.x+=1.5*Math.cos(m/180*Math.PI);h.y+=1.5*Math.sin(m/180*Math.PI);if(h.x<0)h.x=a;if(h.x>a)h.x=0;if(h.y<0)h.y=b;if(h.y>b)h.y=0;for(f=e+1;f<200;f++){i=g[f];k=h.x-i.x;l=h.y-i.y;j=Math.sqrt(k*k+l*l);if(j<c){d.strokeStyle="rgba( 255, 100, 255, "+(c-j)/c+" )";d.lineWidth=2;d.lineCap="round";d.beginPath();d.moveTo(h.x,h.y);d.lineTo(i.x,i.y);
+d.closePath();d.stroke()}}d.fillStyle="#ffffff";d.fillRect(h.x-1,h.y-1,3,3)}},20);
+    
+</script></body></html>

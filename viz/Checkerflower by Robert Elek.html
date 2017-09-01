@@ -1,0 +1,15 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/details/1392" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Checkerflower<br>by Robert Elek</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+b.style.background="#000";for(var d=c.width=window.innerWidth-9,f=c.height=window.innerHeight-9,g=Math.max(d,1024),k=Math.max(f,512),m=(d-g)/2,n=(f-k)/2,p=new Int16Array(16777216),s=0;2048>s;s++)for(var z=0;2048>z;z++){var A=0==z?Math.PI/2:Math.atan(s/z);p[4096*(s+2048)+(z+2048)]=1024*A/Math.PI/2;p[4096*(s+2048)+(2048-z)]=2048-1024*A/Math.PI/2;p[4096*(2048-s)+(2048-z)]=2048+1024*A/Math.PI/2;p[4096*(2048-s)+(z+2048)]=4096-1024*A/Math.PI/2}for(var B=new Float64Array(4096),A=0;4096>A;A++)B[A]=0.5-Math.abs(Math.sin(A*Math.PI/128));var C=0,D=new ArrayBuffer(4*g*k),E=new Uint8ClampedArray(D),G=new Uint32Array(D),H=a.createImageData(g,k),I=new Int32Array(2);setInterval(function(){var h=1+0.5*Math.cos(C/180),t=0,e=C%600;500<e?t=Math.cos((e-500)/64):300<e?t=1:200<e&&(t=Math.sin((e-200)/64));var l=(0.5+Math.sin(C/120)/4)*g,e=(0.5+Math.sin(C/60)/4)*k,v=20*Math.sin(C/114)-10;if(900>C||0>v)v=0;for(var j=Math.cos(C/400)/h,u=Math.sin(C/400)/h,h=[j,u],j=[-u,j],u=192*Math.cos(C/100),J=192*Math.sin(C/100),w=0,x=-l*h[0]-e*j[0],y=-l*h[1]-e*j[1],e=k;e--;x+=j[0],y+=j[1])for(var l=(Math.random()-0.5)*v,q=x+l*h[0],r=y+l*j[0],l=g;l--;q+=h[0],r+=h[1],w++){I[0]=q+2048;I[1]=r+2048;var F=B[p[(I[1]<<12)+I[0]]+C&4095]*t;G[w]=((G[w]&16777215)>>1)+((q+q*F+u^r+r*F+J)&128?4286578688:4278190080)}H.data.set(E);a.putImageData(H,m,n);C++},50);
+        
+
+</script></body></html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://sites.google.com/site/holycaffeine" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Wavy Waves<br>by Yuri Ivatchkovitch</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+
+var b=document.body,c=b.children[0],d=c.getContext("2d"),e=c.width=innerWidth-21,f=c.height=innerHeight-21,g=e*f/810,h=[],i=Math,j=i.random,k=i.max,l=i.min,m=0,n=["sin","cos","tan"],o=i.sin,p=i.sin,q=i.abs;b.style.overflow="hidden";b.onmousedown=function(){o=i[n[j()*n.length|0]];p=i[n[j()*n.length|0]]};for(b.bgColor="#000";h.length<g;)h.push({x:j()*e|0,y:j()*f|0,a:0,b:0});setInterval(function(){d.fillStyle="rgba(0,0,0,0.01)";d.fillRect(0,0,e,f);for(m=0;m<g;m++){var a=h[m];a.x+=a.a;a.y+=a.b;a.x=q(a.x+e)%e;a.y=q(a.y+f)%f;a.b=p(a.x/25)-0.5;a.a=o(a.y/25)-0.5;var r="rgb("+(l(k(a.x/e,0),1)*255|0)+","+(l(k(a.a*a.a+a.b*a.b,0),1)*255|0)+","+(l(k(a.y/f,0),1)*255|0)+")";d.fillStyle=r;d.beginPath();d.arc(a.x,a.y,5/k(a.a*a.a+a.b*a.b,0.5),0,2*i.PI,0);d.closePath();d.fill()}},10);
+    
+
+</script></body></html>

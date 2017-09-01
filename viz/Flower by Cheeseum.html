@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/details/1438" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Flower<br>by Cheeseum</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+
+r=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(f){window.setTimeout(f,1E3/60)};var e=-0.5,g=4,h=0.005,k=0,m=100,n=50,p=0,q=0;colorIntv=1;phase=0;window.onload=function(){b.style.margin;c.style.backgroundColor="#222";s();t();c.focus()};window.onresize=s;function s(){c.width=window.innerWidth;c.height=window.innerHeight;p=c.width/2;q=c.height/2}
+function t(){a.save();a.setTransform(1,0,0,1,0,0);a.clearRect(0,0,c.width,c.height);a.restore();a.lineWidth=1;for(var f=150*Math.sin(e)+50,d=-Math.PI;d<Math.PI;d+=0.05){var l=f*Math.sin(g*d)+f*Math.cos(g*d),u=5+5*Math.sin(f*d);a.strokeStyle="hsl("+k+","+m+"%,"+n+"%)";k+=colorIntv;if(255<k||0>k)colorIntv*=-1;a.beginPath();a.arc(l*Math.cos(d+phase)+p,l*Math.sin(d+phase)+q,u,0,2*Math.PI);a.stroke()}g+=h;if(6<g||3>g)h*=-1;e=e>2*Math.PI?0:e+0.005;phase=phase>2*Math.PI?0:phase+0.01;r(t)};
+    
+
+</script></body></html>

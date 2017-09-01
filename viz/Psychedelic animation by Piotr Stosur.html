@@ -1,0 +1,39 @@
+<!DOCTYPE html><html><head><style>
+html, body { background-color: black; margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://js1k.com/2013-spring/demo/1431" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Psychedelic Animation<br>by Piotr Stosur</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+v=450;
+t=0;o=255;m=Math;
+function i(){
+t+=0.01;
+w=c.width/2+m.sin(t)*100;
+r=m.floor(m.sin(t*3)*o);
+g=m.floor(m.sin(t*5)*o);
+n=m.floor(m.sin(t*7)*o);
+with(a){
+fillStyle="rgba(0,0,0,0.005)";
+fillRect(0, 0, w, w);
+fillRect(w, w, w, w);
+fillStyle="rgba("+r+","+g+","+n+",0.1)";
+fillRect(w, 0, w, w);
+fillRect(0, w, w, w);
+drawImage(c,0,w,w,w);
+drawImage(c,w,w,w,w);
+drawImage(c,w,0,w,w);
+drawImage(c,0,0,w,w);
+translate(v,v);
+rotate(0.01*m.abs(m.sin(t)));
+translate(-v,-v);}
+setTimeout('i()',10);}
+i();
+    
+</script></body></html>

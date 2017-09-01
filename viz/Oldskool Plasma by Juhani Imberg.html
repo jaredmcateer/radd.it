@@ -1,0 +1,16 @@
+<!DOCTYPE html><html><head><style>
+html, body { margin: 0; padding: 0; border: 0; width: 100%; height: 100%; overflow: hidden; }
+</style>
+</head><body>
+<canvas id="c" width="100%" height="100%"></canvas>
+<a href="http://juhani.imberg.fi/" target="_blank" style="position:absolute;bottom:8px;right:16px;text-decoration:none;color:#b0bec5;background-color:black;text-align:right;padding:8px;border-radius:2px">Oldskool Plasma<br>by Juhani Imberg</a>
+<script>
+var canvas=document.getElementById("c");
+var a=canvas.getContext("2d");
+var b = document.body;
+
+var b=Math.sin,d=Math.floor,e,f;f=e=256;for(var g=[],h=[],j=0;j<e;j++){g[j]=[];for(var k=0;k<f;k++)g[j][k]=d((128*b(j/16)+256+128*b(k/8)+128+128*b((j+k)/16)+128+128*b(Math.sqrt(j*j+k*k)/8))/4)}
+for(var i=0;256>i;i++){var l=h,p=i,q,r=i/256,s=void 0,t=void 0,u=void 0,v=d(6*r),w=6*r-v,x=1*(1-1*w),y=1*(1-1*(1-w));switch(v%6){case 0:s=1;t=y;u=0;break;case 1:s=x;t=1;u=0;break;case 2:s=0;t=1;u=y;break;case 3:s=0;t=x;u=1;break;case 4:s=y;t=0;u=1;break;case 5:s=1,t=0,u=x}q="rgb("+d(255*s)+","+d(255*t)+","+d(255*u)+")";l[p]=q}c.width=8*e;c.height=8*f;var z=0;
+function A(){for(var m=0;m<e;m++)for(var n=0;n<f;n++){var B=m,C=n;a.fillStyle=h[(g[m][n]+z)%256];a.fillRect(8*B,8*C,8,8)}z+=1;window.setTimeout(function(){A()},1E3/60)}A();
+    
+</script></body></html>

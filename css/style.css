@@ -1,0 +1,55 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* clearfix */
+#container:after {
+  content: ' ';
+  display: block;
+  clear: both;
+}
+
+.panel {
+  width: 100%;
+  height: 400px;
+  float: left;
+  /*background: #777;
+  border: 1px solid #333;
+  border-color: hsla(0, 0%, 0%, 0.3);*/
+}
+
+.panel:hover {
+  border-color: white;
+  /*cursor: move;*/
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+#logo-container img { max-height: 74px; }
+
+.activator { cursor: pointer; }
+
+div.card-image img { height: 231px; }
+
+div.card div.card-reveal {
+	height: 98%;
+	width: 95%;
+	margin-left: 2%;
+}
+
+nav { 
+	height: 64px !important;
+}
